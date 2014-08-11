@@ -1,6 +1,6 @@
 ﻿/**
- * 
- * 
+ *  filesmuj.js
+ *  2014-08-11
  */
 // DOM s daty - nacteno z SD nebo ze serveru 
 // var xmlData = loadXMLDoc("katvozlist.xml"); 

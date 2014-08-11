@@ -1,9 +1,13 @@
-#platforms pro CLI
+#vynechat cely adresar /platforms/*.* pro CLI
 platforms/
+
+# zbytky od editoru JEDIT
+*.*~
 
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+
 
 # Folder config file
 Desktop.ini
