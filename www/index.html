@@ -11,6 +11,9 @@ TEST MEDIA API
 <meta http-equiv="Pragma" content="no-cache">
 
 <link href="css/icons.css" rel="stylesheet" type="text/css">
+<link href="css/icons.fa.css" rel="stylesheet" type="text/css">
+
+
 <link href="css/af.ui.css" rel="stylesheet" type="text/css">  
 <link href="my.css" rel="stylesheet" type="text/css">
 
@@ -88,7 +91,8 @@ TEST MEDIA API
     
     function gotoPage(page)
     {
-      window.location.href = "#"+page;
+      console.log("gotoPage : #"+page);
+      location.href = "#"+page;
     }
     
     
@@ -311,7 +315,16 @@ function vGJkCreateDirTree(rootDirEntry, folders) {
 };
 
 
-
+function showicons(){
+  console.log("Show Icons");
+  	
+  // $.ui.addContentDiv("pageIcons","Seřazené ikony","Ikony k dispozici");
+  $.ui.updateContentDiv("#pageIcons","This is the new content pageIcons");
+  gotoPage("pageIcons");
+  // $("#pageIcons").toggle(true); //force showing
+  
+  //  window.location.href = "#pageIcons";
+}
 
 
 
@@ -404,10 +417,23 @@ nakonec uloženo: file:///data/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp
         <a class="button big"   
            onclick="javascript:Prehraj('cdvfile://localhost/files/SPRT/to/downloads/Hlas.mp3');">Prehraj(cdvfile://localhost/files/SPRT/to/downloads/Hlas.mp3)</a>
            
-        <hr/><hr/>
+        <hr/> 
+        
+       <div class="button-grouped">
          <a class="button big"   
-           onclick="javascript:alert('fs_ = ' + fs_);">UKAZ FS_ </a>
+           onclick="javascript:alert('fs_ = ' + fs_);">
+           <span class="icon info"></span>
+           UKAZ FS_ </a>
         <hr/>
+         <a class="button big"   
+           onclick="javascript:alert('fs_ = ' + fs_);">
+           <span class="icon info fa-female"  style="font-size: 3.0em;"></span>
+           UKAZ FS_2 </a>
+        <hr/>
+         <a class="button big icon fa-android"  href="#pageIcons" style="font-size: 2.5em;color:green;"
+           onclick="javascript:showicons();">
+           Show icons </a>
+        </div>
 
         
 
@@ -481,13 +507,28 @@ nakonec uloženo: file:///data/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp
 
 			     
 		</ul>    
-		</div>
-    
+	</div>
+      <!-- log panel -->
+        <div class="panel" title="Ikony" id="pageIcons" 
+         style="overflow:auto; height:750px;" 
+        data-nav="nav_0" data-footer="none"  >
+            <h1>IKONY </h1>
+ 		<ul id="logtxt" class="list" style="overflow:auto; height:750px;" 
+ 		    data-appbuilder-object="list" data-position="static" style="z-index: 0;">
+
+			     
+		</ul>    
+	</div>
+
+		
     </div> <!-- konec Content -->
  
     <div id="navbar">
-        <a href="#Zkouseni" class="icon home">Learn</a><a href="#Kviz" class="icon picture">Test</a>
-        <a href="#Historie" class="icon info">Stat</a><a href="#nastav" class="icon settings">Setup</a>
+        <a href="#Zkouseni" class="icon home">Learn</a>
+        <a href="#Kviz" class="icon picture">Test</a>
+        <a href="#Historie" class="icon info">Stat</a>
+        <a href="#nastav" class="icon settings">Setup</a>
+        <a href="#pageIcons" class="icon heart">Icons</a>
     </div>
     <header id="header_0" data-appbuilder-object="header">
         <a id="backButton" href="#" class="button back" style="visibility: visible; ">Back</a>
