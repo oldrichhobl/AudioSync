@@ -1,6 +1,6 @@
-#vynechat cely adresar /platforms/*.* pro CLI
-platforms/
-
+# nevynechat cely adresar /platforms/*.* pro CLI
+# platforms/
+#
 # zbytky od editoru JEDIT
 *.*~
 
