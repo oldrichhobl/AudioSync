@@ -316,17 +316,61 @@ function vGJkCreateDirTree(rootDirEntry, folders) {
 
 
 function showicons(){
+ // prepise stranku pageIcons
   console.log("Show Icons");
   	
   // $.ui.addContentDiv("pageIcons","Seřazené ikony","Ikony k dispozici");
-  $.ui.updateContentDiv("#pageIcons","This is the new content pageIcons");
+  var s =
+   		'<ul id="logtxt" class="list inset" >'+
+                   '<li class="icon home big">Home</li>'+
+                   '<li class="icon settings big">settings</li>'+	     
+                   '<li class="icon android big">android</li>'+	     
+                   '<li class="icon fa-android big">fa-android</li>'+	     
+		'</ul>    '+
+		'<div id="textXX">  XX </div>    ';
+		
+		
+		
+		;
+
+  //  nacteni souboru z www
+	//This alias is a read-only pointer to the app itself
+	console.log("cordova.file.applicationDirectory:" + cordova.file.applicationDirectory + "www/index.html");
+	
+	window.resolveLocalFileSystemURL("file:///index.html", gotFileXX, failXX);
+		
+		
+  var ss='<hr/>';
+  
+  
+  
+  $.ui.updateContentDiv("#pageIcons",s);
   gotoPage("pageIcons");
   // $("#pageIcons").toggle(true); //force showing
   
   //  window.location.href = "#pageIcons";
 }
 
+// funkce volane po precteni souboru index.html
+function failXX(e) {
+	console.log("FileSystem Error");
+	console.dir(e);
+}
 
+function gotFileXX(fileEntry) {
+
+	fileEntry.file(function(file) {
+		var reader = new FileReader();
+
+		reader.onloadend = function(e) {
+			console.log("Text is: "+this.result);
+			document.querySelector("#textXX").innerHTML = this.result;
+		}
+
+		reader.readAsText(file);
+	});
+
+}
 
 </script>
 
@@ -508,14 +552,17 @@ nakonec uloženo: file:///data/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp
 			     
 		</ul>    
 	</div>
-      <!-- log panel -->
+	
+	
+      <!-- Ikony panel -->
         <div class="panel" title="Ikony" id="pageIcons" 
          style="overflow:auto; height:750px;" 
         data-nav="nav_0" data-footer="none"  >
             <h1>IKONY </h1>
- 		<ul id="logtxt" class="list" style="overflow:auto; height:750px;" 
+ 		<ul id="logtxt" class="list inset" style="overflow:auto; height:750px;" 
  		    data-appbuilder-object="list" data-position="static" style="z-index: 0;">
-
+                   <li class="icon home big">Home</li>
+                   <li class="icon settings big">settings</li>
 			     
 		</ul>    
 	</div>

@@ -39,5 +39,6 @@
     <access origin="*" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="6000" />
-    <preference name="LoadingDialog" value=" * S P R T * ,Hledám nové lekce" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,root" />
+    <preference name="LoadingDialog" value=" * A U D I O ** S Y N C * ,Test synchronizace" />
 </widget>
