@@ -9,11 +9,19 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
                         },
                         {
@@ -22,14 +30,6 @@
                         },
                         {
                             "xml": "<feature name=\"Vibration\"><param name=\"android-package\" value=\"org.apache.cordova.vibration.Vibration\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -66,22 +66,22 @@
         }
     },
     "installed_plugins": {
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.gjk.sprt"
+        },
         "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.gjk.sprt"
         },
-        "org.apache.cordova.device": {
+        "org.apache.cordova.file-transfer": {
+            "PACKAGE_NAME": "com.gjk.sprt"
+        },
+        "org.apache.cordova.media": {
             "PACKAGE_NAME": "com.gjk.sprt"
         },
         "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.gjk.sprt"
         },
         "org.apache.cordova.vibration": {
-            "PACKAGE_NAME": "com.gjk.sprt"
-        },
-        "org.apache.cordova.media": {
-            "PACKAGE_NAME": "com.gjk.sprt"
-        },
-        "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "com.gjk.sprt"
         }
     },
