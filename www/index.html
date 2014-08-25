@@ -337,7 +337,9 @@ function showicons(){
 	//This alias is a read-only pointer to the app itself
 	console.log("cordova.file.applicationDirectory:" + cordova.file.applicationDirectory + "www/index.html");
 	
-	window.resolveLocalFileSystemURL("file:///index.html", gotFileXX, failXX);
+  //  tohle funguje
+  // window.resolveLocalFileSystemURL("cdvfile://localhost/persistent/path/to/downloads/Hlas.mp3", gotFileXX, failXX);
+	window.resolveLocalFileSystemURL("cdvfile://localhost/persistent/path/to/downloads/katvoz.svg", gotFileXX, failXX);
 		
 		
   var ss='<hr/>';
@@ -353,7 +355,7 @@ function showicons(){
 
 // funkce volane po precteni souboru index.html
 function failXX(e) {
-	console.log("FileSystem Error");
+	console.log("FileSystem Error failXX");
 	console.dir(e);
 }
 
