@@ -218,6 +218,9 @@ fileTransfer.download(
     fileURL,
     function(entry) {
         console.log("download complete: " + entry.toURL());
+        console.log("Code = " + entry.responseCode);
+        console.log("Response = " + entry.response);
+        console.log("Sent = " + entry.bytesSent);
     },
     function(error) {    
 //•1 =  FileTransferError.FILE_NOT_FOUND_ERR  
@@ -335,11 +338,23 @@ function showicons(){
 
   //  nacteni souboru z www
 	//This alias is a read-only pointer to the app itself
-	console.log("cordova.file.applicationDirectory:" + cordova.file.applicationDirectory + "www/index.html");
+	console.log("cordova.file.applicationDirectory:" + cordova.file.applicationDirectory );
+	console.log("cordova.file.applicationStorageDirectory:" + cordova.file.applicationStorageDirectory );
 	
-	window.resolveLocalFileSystemURL("cdvfile://localhost/persistent/path/to/downloads/Hlas.mp3", gotFileXX, failXX);
-		
-		
+	
+  //  tohle funguje
+  // window.resolveLocalFileSystemURL("cdvfile://localhost/persistent/path/to/downloads/Hlas.mp3", gotFileXX, failXX);
+  // nefunguje 	window.resolveLocalFileSystemURL("cdvfile://localhost/persistent/katvoz.svg", gotFileXX, failXX);
+
+  // nefunguje window.resolveLocalFileSystemURL( cordova.file.applicationDirectory + "/katvoz.svg", gotFileXX, failXX);
+  // window.resolveLocalFileSystemURL( cordova.file.applicationDirectory + "/www/katvoz.svg", gotFileXX, failXX);
+  //	  window.resolveLocalFileSystemURL( "cdvfile://localhost/persistent/www/katvoz.svg", gotFileXX, failXX);
+  //	  window.resolveLocalFileSystemURL( "cdvfile://localhost/persistent/android_asset/katvoz.svg", gotFileXX, failXX);
+  // encoding error:	  window.resolveLocalFileSystemURL( "cdvfile://localhost/android_asset/katvoz.svg", gotFileXX, failXX);
+	  window.resolveLocalFileSystemURL( "katvoz.svg", gotFileXX, failXX);
+	  
+	  
+	  
   var ss='<hr/>';
   
   
@@ -447,6 +462,13 @@ function gotFileXX(fileEntry) {
         --> 
          <a class="button big"                
            onclick="javascript:DownloadFile('http://www.dramatik.cz/Hlas.mp3','cdvfile://localhost/files/SPRT/to/downloads/Hlas.mp3');">DownloadFile(dramatik,files)</a>
+           http://www.dramatik.cz/Hlas.mp3  --to--&gt;  cdvfile://localhost/files/SPRT/to/downloads/Hlas.mp3<br>
+nakonec uloženo: file:///data/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp3 
+                       = Device storage/Android/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp3
+
+           <hr/><br/>
+         <a class="button big"                
+           onclick="javascript:DownloadFile(cordova.file.applicationDirectory + 'www/katvoz.svg','cdvfile://localhost/files/katvozxx.mp3');">DOWNLOADFILE(katvoz.svg)</a>
            http://www.dramatik.cz/Hlas.mp3  --to--&gt;  cdvfile://localhost/files/SPRT/to/downloads/Hlas.mp3<br>
 nakonec uloženo: file:///data/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp3 
                        = Device storage/Android/data/com.gjk.sprt/files/SPRT/to/downloads/Hlas.mp3
