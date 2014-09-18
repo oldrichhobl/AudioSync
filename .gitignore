@@ -1,5 +1,9 @@
-# nevynechat cely adresar /platforms/*.* pro CLI
-# platforms/
+# vsechno vynechat pouze ponechat www
+platforms/
+plugins/
+res/
+hooks/
+datasrc/
 #
 # zbytky od editoru JEDIT
 *.*~

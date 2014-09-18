@@ -218,9 +218,6 @@ fileTransfer.download(
     fileURL,
     function(entry) {
         console.log("download complete: " + entry.toURL());
-        console.log("Code = " + entry.responseCode);
-        console.log("Response = " + entry.response);
-        console.log("Sent = " + entry.bytesSent);
     },
     function(error) {    
 //•1 =  FileTransferError.FILE_NOT_FOUND_ERR  
